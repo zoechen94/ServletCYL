@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:context="http://www.springframework.org/schema/context"
+               xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <!-- 1.配置数据库连接池 -->
+        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+            <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/servletweb"></property>
+            <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+            <property name="user" value="root"></property>
+            <property name="password" value="root"></property>
+        </bean>
+        
+        <!-- 2.配置JdbcTemplate -->
+        <bean id="jdbctemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+            <!-- 给属性注入值 -->
+            <property name="dataSource" ref="dataSource"></property>
+        </bean>
+</beans>
