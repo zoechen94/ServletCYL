@@ -1,4 +1,4 @@
-我才疏学浅，不知道则么继续push,忘记加一个sql文件了,所以这样吧，我直接贴上来。
+
 /*
 Navicat MySQL Data Transfer
 
